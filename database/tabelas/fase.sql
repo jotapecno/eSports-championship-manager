@@ -5,5 +5,4 @@ CREATE TABLE fase (
     formato_disputa VARCHAR(50),
     data_inicio DATE,
     data_fim DATE,
-    CONSTRAINT fk_fase_campeonato FOREIGN KEY (id_campeonato) REFERENCES campeonato(id_campeonato)
 );
