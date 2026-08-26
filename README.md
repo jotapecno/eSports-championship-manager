@@ -52,6 +52,7 @@ database/
 ├── tabelas/
 ├── inserts/
 └── consultas/
+```
 
 ## 👥 Equipe
 
