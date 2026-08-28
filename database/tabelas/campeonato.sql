@@ -1,5 +1,5 @@
 CREATE TABLE campeonato (
-    id_campeonato SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     data_inicio DATE NOT NULL,
     data_fim DATE,
