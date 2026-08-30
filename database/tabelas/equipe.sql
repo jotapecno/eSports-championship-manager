@@ -1,9 +1,8 @@
 CREATE TABLE equipe(
-  id_equipe SERIAL PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   nome VARCHAR(50) NOT NULL,
-  quantidade_membros INTEGER,
+  quantidade_membros INT NOT NULL,
   ativo BOOLEAN NOT NULL,
-  vitorias INTEGER NOT NULL,
-  derrotas INTEGER NOT NULL,
-  historico_partidas TEXT
+  vitorias INT NOT NULL,
+  derrotas INT NOT NULL
 );
