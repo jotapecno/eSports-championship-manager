@@ -1,5 +1,5 @@
 --  ENUM para o status de participação para enviar erros de digitação
-CREATE TYPE status_participacao AS ENUM ('Inscrita', 'Ativa', 'Eliminada', 'Desistente');
+CREATE TYPE status_participacao_enum AS ENUM ('Inscrita', 'Ativa', 'Eliminada', 'Desistente');
 
 CREATE TABLE equipe_campeonato (
     id SERIAL PRIMARY KEY,
