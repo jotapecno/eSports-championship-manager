@@ -1,4 +1,4 @@
-CREATE TABLE Estatistica (
+CREATE TABLE estatistica (
     id_estatistica INT AUTO_INCREMENT PRIMARY KEY,
     id_partida INT NOT NULL,
     id_equipe INT NOT NULL,
