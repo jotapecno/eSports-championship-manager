@@ -1,4 +1,4 @@
-CREATE TABLE Resultado (
+CREATE TABLE resultado (
     id_resultado INT AUTO_INCREMENT PRIMARY KEY,
     id_partida INT NOT NULL UNIQUE, 
     id_equipe_vencedora INT,
