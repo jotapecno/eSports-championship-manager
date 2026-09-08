@@ -63,7 +63,7 @@ database/
 | Vitor Hugo da Silva Oliveira| Integrante |
 | Davi Mercês da Silva | Integrante |
 | Matheus Barbosa dos Santos Carvalho| Integrante |
-| Felipe Azevedo Brito | Integrante |
+| Andrei de Almeida Santos | Integrante |
 
 
 ---
