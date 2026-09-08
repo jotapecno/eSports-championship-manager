@@ -1,6 +1,8 @@
+DROP TABLE IF EXISTS equipe;
+
 CREATE TABLE equipe(
   id SERIAL PRIMARY KEY,
-  nome VARCHAR(50) NOT NULL,
+  nome VARCHAR(50) UNIQUE NOT NULL,
   quantidade_membros INT NOT NULL,
   ativo BOOLEAN NOT NULL,
   vitorias INT NOT NULL,
