@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS organizacao;
+
 CREATE TABLE organizacao (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -5,3 +7,35 @@ CREATE TABLE organizacao (
     email_contato VARCHAR(100),
     data_fundacao DATE
 );
+
+INSERT INTO organizacao (nome, cnpj, email_contato, data_fundacao) VALUES
+('Riot Games', '00.000.000/0001-01', 'contato@riotgames.com', '2006-09-01'),
+('ESL Gaming', '11.111.111/0001-11', 'suporte@eslgaming.com', '2000-01-01'),
+('PGL Esports', '22.222.222/0001-22', 'contact@pgl.gg', '2002-04-15'),
+('BLAST Premier', '33.333.333/0001-33', 'info@blastpremier.com', '2020-01-01'),
+('DreamHack', '44.444.444/0001-44', 'contact@dreamhack.com', '1994-11-01'),
+('Beyond the Summit', '55.555.555/0001-55', 'info@beyondthesummit.tv', '2012-03-01'),
+('ELEAGUE', '66.666.666/0001-66', 'support@eleague.com', '2016-05-24'),
+('Major League Gaming', '77.777.777/0001-77', 'contact@mlg.com', '2002-09-01'),
+('Evolution Championship Series', '88.888.888/0001-88', 'contact@evo.gg', '1996-07-01'),
+('Twitch Rivals', '99.999.999/0001-99', 'rivals@twitch.tv', '2018-02-28'),
+('Valve Corporation', '10.101.010/0001-10', 'contact@valvesoftware.com', '1996-08-24'),
+('Epic Games', '12.121.212/0001-12', 'esports@epicgames.com', '1991-01-15'),
+('Psyonix', '13.131.313/0001-13', 'esports@psyonix.com', '2000-12-01'),
+('Ubisoft Esports', '14.141.414/0001-14', 'esports@ubisoft.com', '1986-03-28'),
+('Activision Blizzard', '15.151.515/0001-15', 'esports@blizzard.com', '2008-07-10'),
+('Nintendo', '16.161.616/0001-16', 'esports@nintendo.com', '1889-09-23'),
+('Capcom Pro Tour', '17.171.717/0001-17', 'cpt@capcom.com', '2014-01-01'),
+('Tencent Games', '18.181.818/0001-18', 'esports@tencent.com', '2003-01-01'),
+('Garena', '19.191.919/0001-19', 'esports@garena.com', '2009-05-08'),
+('Supercell', '20.202.020/0001-20', 'esports@supercell.com', '2010-05-14'),
+('Krafton', '21.212.121/0001-21', 'esports@krafton.com', '2007-03-01'),
+('EA Sports', '23.232.323/0001-23', 'esports@ea.com', '1991-01-01'),
+('Ogn', '24.242.424/0001-24', 'contact@ogn.com', '2000-07-24'),
+('WePlay Esports', '25.252.525/0001-25', 'info@weplay.tv', '2006-01-01'),
+('FACEIT', '26.262.626/0001-26', 'support@faceit.com', '2012-01-01'),
+('E-Sports Entertainment Association', '27.272.727/0001-27', 'support@esea.net', '2003-01-01'),
+('StarLadder', '28.282.828/0001-28', 'info@starladder.tv', '2012-01-01'),
+('Gfinity', '29.292.929/0001-29', 'contact@gfinity.net', '2012-01-01'),
+('CPL', '30.303.030/0001-30', 'info@thecpl.com', '1997-06-27'),
+('WCG', '31.313.131/0001-31', 'contact@wcg.com', '2000-10-07');
