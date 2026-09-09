@@ -28,4 +28,6 @@ INSERT INTO equipe_campeonato (id, campeonato_id, equipe_id, status_participacao
 (27, 9, 30, 'Eliminada'),
 (28, 10, 14, 'Ativa'),
 (29, 10, 29, 'Ativa'),
-(30, 10, 21, 'Desistente');
+(30, 10, 21, 'Desistente')
+  
+ALTER SEQUENCE equipe_campeonato_id_seq RESTART WITH 31;
