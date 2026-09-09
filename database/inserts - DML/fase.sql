@@ -29,3 +29,5 @@ INSERT INTO fase (campeonato_id, nome_fase, formato_disputa, data_inicio, data_f
 (10, 'Qualificatória 1', 'MD1', '2027-05-01', '2027-05-02'),
 (10, 'Qualificatória 2', 'MD1', '2027-05-08', '2027-05-09'),
 (10, 'Main Event', 'MD5', '2027-05-20', '2027-05-25');
+
+ALTER SEQUENCE fase_id_seq RESTART WITH 31;
