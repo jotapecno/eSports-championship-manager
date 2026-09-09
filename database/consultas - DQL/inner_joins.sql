@@ -82,3 +82,20 @@ SELECT
     o.nome AS organizacao
 FROM campeonato c
 INNER JOIN organizacao o ON c.organizacao_id = o.id;
+
+-- 11. Equipes inscritas nos campeonatos
+SELECT
+    c.nome AS campeonato,
+    e.nome AS equipe
+FROM equipe_campeonato ec
+INNER JOIN campeonato c ON ec.campeonato_id = c.id
+INNER JOIN equipe e ON ec.equipe_id = e.id;
+
+-- 12. Equipes e status de participação
+SELECT
+    c.nome AS campeonato,
+    e.nome AS equipe,
+    ec.status_participacao
+FROM equipe_campeonato ec
+INNER JOIN campeonato c ON ec.campeonato_id = c.id
+INNER JOIN equipe e ON ec.equipe_id = e.id;
