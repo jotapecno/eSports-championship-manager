@@ -7,4 +7,3 @@ CREATE TABLE organizacao (
     email_contato VARCHAR(100),
     data_fundacao DATE
 );
-
