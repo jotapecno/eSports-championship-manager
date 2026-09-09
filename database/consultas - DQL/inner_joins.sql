@@ -68,3 +68,17 @@ from
 	equipe_campeonato ec
 inner join campeonato c on ec.campeonato_id = c.id
 inner join equipe e on e.id = ec.equipe_id ;
+
+-- 9. Campeonatos e modalidades
+SELECT
+    c.nome AS campeonato,
+    m.nome AS modalidade
+FROM campeonato c
+INNER JOIN modalidade m ON c.modalidade_id = m.id;
+
+-- 10. Campeonatos e organizações
+SELECT
+    c.nome AS campeonato,
+    o.nome AS organizacao
+FROM campeonato c
+INNER JOIN organizacao o ON c.organizacao_id = o.id;
