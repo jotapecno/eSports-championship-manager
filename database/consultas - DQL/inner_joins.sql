@@ -67,7 +67,20 @@ select
 from
 	equipe_campeonato ec
 inner join campeonato c on ec.campeonato_id = c.id
-inner join equipe e on e.id = ec.equipe_id ;
+inner join equipe e on e.id = ec.equipe_id;
+
+-- 8. Estatísticas de uma partida
+SELECT
+    p.id AS partida,
+    j.nome AS jogador,
+    e.nome AS equipe,
+    es.kills,
+    es.assistencias,
+    es.mortes
+FROM estatistica es
+INNER JOIN partida p ON es.partida_id = p.id
+INNER JOIN jogador j ON es.jogador_id = j.id
+INNER JOIN equipe e ON es.equipe_id = e.id;
 
 -- 9. Campeonatos e modalidades
 SELECT
