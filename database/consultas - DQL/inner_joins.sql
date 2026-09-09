@@ -20,6 +20,28 @@ FROM fase f
 INNER JOIN campeonato c ON f.campeonato_id = c.id
 INNER JOIN partida p ON p.fase_id = f.id;
 
+-- 3. Resultado de cada partida
+SELECT
+    p.id AS partida_id,
+    e1.nome AS equipe1,
+    e2.nome AS equipe2,
+    ev.nome AS equipe_vencedora
+FROM resultado r
+INNER JOIN partida p ON r.partida_id = p.id
+INNER JOIN equipe e1 ON p.equipe1_id = e1.id
+INNER JOIN equipe e2 ON p.equipe2_id = e2.id
+INNER JOIN equipe ev ON r.equipe_vencedora_id = ev.id;
+
+-- 4. Resultados por campeonato
+SELECT
+    c.nome AS campeonato,
+    p.id AS partida_id,
+    e.nome AS equipe_vencedora
+FROM resultado r
+INNER JOIN partida p ON r.partida_id = p.id
+INNER JOIN campeonato c ON p.campeonato_id = c.id
+INNER JOIN equipe e ON r.equipe_vencedora_id = e.id;
+
 -- 5. Jogadores e suas equipes
 SELECT
     j.nome AS jogador,
