@@ -57,3 +57,14 @@ FROM equipe e
 INNER JOIN jogador j ON j.equipe_id = e.id
 GROUP BY e.nome
 ORDER BY quantidade_jogadores DESC;
+
+--7. Campeonatos e suas equipes
+select 
+	ec.id,
+	c.nome as campeonato,
+	e.nome as equipe,
+	ec.status_participacao 
+from
+	equipe_campeonato ec
+inner join campeonato c on ec.campeonato_id = c.id
+inner join equipe e on e.id = ec.equipe_id ;
