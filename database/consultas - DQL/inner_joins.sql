@@ -20,3 +20,18 @@ FROM fase f
 INNER JOIN campeonato c ON f.campeonato_id = c.id
 INNER JOIN partida p ON p.fase_id = f.id;
 
+-- 5. Jogadores e suas equipes
+SELECT
+    j.nome AS jogador,
+    e.nome AS equipe
+FROM jogador j
+INNER JOIN equipe e ON j.equipe_id = e.id;
+
+-- 6. Quantidade de jogadores por equipe
+SELECT
+    e.nome AS equipe,
+    COUNT(j.id) AS quantidade_jogadores
+FROM equipe e
+INNER JOIN jogador j ON j.equipe_id = e.id
+GROUP BY e.nome
+ORDER BY quantidade_jogadores DESC;
