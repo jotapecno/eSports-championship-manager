@@ -28,4 +28,6 @@ INSERT INTO partida (id, campeonato_id, fase_id, equipe1_id, equipe2_id, data_ho
 (27, 9, 27, 7, 22, '2027-01-06 20:00:00', 'Brasília, DF'),
 (28, 10, 28, 14, 29, '2027-05-01 19:00:00', 'Online'),
 (29, 10, 29, 21, 6, '2027-05-08 19:30:00', 'Online'),
-(30, 10, 30, 28, 13, '2027-05-22 21:00:00', 'Manaus, AM');
+(30, 10, 30, 28, 13, '2027-05-22 21:00:00', 'Manaus, AM')
+
+ALTER SEQUENCE partida_id_seq RESTART WITH 31;
