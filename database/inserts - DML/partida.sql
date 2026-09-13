@@ -1,3 +1,8 @@
+-- ============================================================
+-- 10ª INSERTS: partida
+-- Descrição: Agendamento das partidas da tabela de jogos.
+-- Dependências de dados: IDs válidos de equipe, campeonato e fase.
+-- ============================================================
 INSERT INTO partida (id, campeonato_id, fase_id, equipe1_id, equipe2_id, data_hora, local_partida) VALUES
 (1, 1, 1, 5, 20, '2026-10-05 19:00:00', 'Online'),
 (2, 1, 2, 12, 27, '2026-10-18 20:00:00', 'Online'),
@@ -29,5 +34,3 @@ INSERT INTO partida (id, campeonato_id, fase_id, equipe1_id, equipe2_id, data_ho
 (28, 10, 28, 14, 29, '2027-05-01 19:00:00', 'Online'),
 (29, 10, 29, 21, 6, '2027-05-08 19:30:00', 'Online'),
 (30, 10, 30, 28, 13, '2027-05-22 21:00:00', 'Manaus, AM')
-
-ALTER SEQUENCE partida_id_seq RESTART WITH 31;
