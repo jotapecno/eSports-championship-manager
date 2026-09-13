@@ -1,3 +1,8 @@
+-- ============================================================
+-- 2ª INSERTS: organizacao
+-- Descrição: Cadastro inicial das organizadoras de torneios.
+-- Dependências de dados: Nenhuma.
+-- ============================================================
 INSERT INTO organizacao (nome, cnpj, email_contato, data_fundacao) VALUES
 ('Riot Games', '00.000.000/0001-01', 'contato@riotgames.com', '2006-09-01'),
 ('ESL Gaming', '11.111.111/0001-11', 'suporte@eslgaming.com', '2000-01-01'),
@@ -29,5 +34,3 @@ INSERT INTO organizacao (nome, cnpj, email_contato, data_fundacao) VALUES
 ('Gfinity', '29.292.929/0001-29', 'contact@gfinity.net', '2012-01-01'),
 ('CPL', '30.303.030/0001-30', 'info@thecpl.com', '1997-06-27'),
 ('WCG', '31.313.131/0001-31', 'contact@wcg.com', '2000-10-07');
-
-ALTER SEQUENCE organizacao_id_seq RESTART WITH 31;
