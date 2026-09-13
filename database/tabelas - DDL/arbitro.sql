@@ -1,5 +1,9 @@
 DROP TABLE IF EXISTS arbitro;
-
+-- ============================================================
+-- 5ª TABELA: arbitro
+-- Descrição: Profissionais responsáveis pela mediação das partidas.
+-- Dependências: Nenhuma (tabela base).
+-- ============================================================
 CREATE TABLE arbitro (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
