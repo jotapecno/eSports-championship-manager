@@ -1,3 +1,8 @@
+-- ============================================================
+-- 1ª INSERTS: modalidade
+-- Descrição: Carga inicial dos esportes disponíveis na plataforma.
+-- Dependências de dados: Nenhuma.
+-- ============================================================
 INSERT INTO modalidade
 (id, nome, genero, numero_jogadores, descricao, ativo)
 VALUES
@@ -7,5 +12,3 @@ VALUES
 (4, 'Dota 2', 'MOBA', 5, 'Jogo de estratégia e batalha em equipes.', TRUE),
 (5, 'Rocket League', 'Esporte Eletrônico', 3, 'Competição de futebol utilizando veículos.', TRUE),
 (6, 'Rainbow Six Siege', 'FPS', 5, 'Jogo de tiro tático focado em operações de equipes.', TRUE);
-
-ALTER SEQUENCE modalidade_id_seq RESTART WITH 7;
