@@ -1,3 +1,8 @@
+-- ============================================================
+-- 12ª INSERTS: estatistica
+-- Descrição: Métricas e lances individuais dos atletas por jogo.
+-- Dependências de dados: IDs válidos de partida, equipe e jogador.
+-- ============================================================
 INSERT INTO estatistica (id, partida_id, equipe_id, jogador_id, nome_metrica, valor) VALUES
 (1, 1, 1, 1, 'Kills', 12.00),
 (2, 1, 2, 7, 'Kills', 9.00),
@@ -30,4 +35,3 @@ INSERT INTO estatistica (id, partida_id, equipe_id, jogador_id, nome_metrica, va
 (29, 15, 3, 16, 'Assistencias', 10.00),
 (30, 15, 4, 22, 'Assistencias', 12.00);
 
-ALTER SEQUENCE estatistica_id_seq RESTART WITH 31;
