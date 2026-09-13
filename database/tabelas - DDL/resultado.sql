@@ -1,5 +1,9 @@
 DROP TABLE IF EXISTS resultado;
- 
+ -- ============================================================
+-- 11ª TABELA: resultado
+-- Descrição: Placar final, prorrogações e desfecho da partida.
+-- Dependências: partida, equipe.
+-- ============================================================
 CREATE TABLE resultado (
     id SERIAL PRIMARY KEY,
     partida_id INT NOT NULL UNIQUE,
