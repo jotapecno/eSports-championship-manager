@@ -1,3 +1,8 @@
+-- ============================================================
+-- 7ª INSERTS: jogador
+-- Descrição: Cadastro dos atletas do campeonato.
+-- Dependências de dados: IDs válidos de equipe.
+-- ============================================================
 INSERT INTO jogador (id, equipe_id, nome, cpf, email, data_nascimento, endereco, numero_mpvs, posicao_ranking) VALUES
 -- Jogadores da Equipe 1 (Alpha Wolves)
 (1, 1, 'Gabriel Silva', '12345678901', 'gabriel.silva@email.com', '1998-03-14', 'Rua das Flores, 123 - SP', 5, 12),
@@ -38,6 +43,3 @@ INSERT INTO jogador (id, equipe_id, nome, cpf, email, data_nascimento, endereco,
 (28, 5, 'Igor Guimarães', '89102345678', 'igor.guimaraes@email.com', '1998-07-25', 'Rua Curitiba, 77 - PR', 3, 40),
 (29, 5, 'Alexandre Franco', '90213456789', 'alexandre.franco@email.com', '1999-01-01', 'Av. Afonso Pena, 120 - MS', 5, 25),
 (30, 5, 'Douglas Souza', '01324567890', 'douglas.souza@email.com', '1997-04-30', 'Rua Cuiabá, 88 - MT', 4, 33);
-
--- Sincroniza a sequência automática com o número do próximo ID livre
-ALTER SEQUENCE jogador_id_seq RESTART WITH 31;
