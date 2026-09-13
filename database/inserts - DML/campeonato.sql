@@ -1,3 +1,8 @@
+-- ============================================================
+-- 6ª INSERTS: campeonato
+-- Descrição: Cadastro das competições a serem disputadas.
+-- Dependências de dados: IDs de modalidade e organizacao existentes.
+-- ============================================================
 INSERT INTO campeonato (id, nome, data_inicio, data_fim, local, premiacao, status, modalidade_id, organizacao_id) VALUES
 (1, 'Riot Games League Series 2026', '2026-10-01', '2026-10-25', 'São Paulo, SP', 500000.00, 'Planejado', 1, 1),
 (2, 'ESL Valorant Masters 2026', '2026-11-01', '2026-11-20', 'Rio de Janeiro, RJ', 350000.00, 'Planejado', 2, 2),
@@ -29,5 +34,3 @@ INSERT INTO campeonato (id, nome, data_inicio, data_fim, local, premiacao, statu
 (28, 'Gfinity Dota2 Elite Series 2026', '2026-09-10', '2026-09-20', 'São Paulo, SP', 300000.00, 'Em andamento', 4, 28),
 (29, 'CPL Rocket League Cup 2027', '2027-03-05', '2027-03-15', 'Rio de Janeiro, RJ', 210000.00, 'Planejado', 5, 29),
 (30, 'WCG Siege World Finals 2027', '2027-07-01', '2027-07-20', 'Belo Horizonte, MG', 500000.00, 'Planejado', 6, 30);
- 
-ALTER SEQUENCE campeonato_id_seq RESTART WITH 31;
