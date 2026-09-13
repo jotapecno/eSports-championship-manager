@@ -1,5 +1,9 @@
 DROP TABLE IF EXISTS campeonato;
-
+-- ============================================================
+-- 6ª TABELA: campeonato
+-- Descrição: Edições de competições e torneios esportivos.
+-- Dependências: modalidade, organizacao.
+-- ============================================================
 CREATE TABLE campeonato (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
