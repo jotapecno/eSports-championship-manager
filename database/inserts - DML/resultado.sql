@@ -1,3 +1,8 @@
+-- ============================================================
+-- 11ª INSERTS: resultado
+-- Descrição: Fechamento de súmula com o placar de jogos concluídos.
+-- Dependências de dados: IDs válidos de partida e equipe.
+-- ============================================================
 INSERT INTO resultado (id, partida_id, equipe_vencedora_id, pontuacao_equipe_a, pontuacao_equipe_b, duracao_segundos, observacoes) VALUES
 (1, 1, 5, 2, 0, 2526, 'Reviravolta nos minutos finais.'),
 (2, 2, 12, 2, 0, 1819, NULL),
@@ -29,5 +34,3 @@ INSERT INTO resultado (id, partida_id, equipe_vencedora_id, pontuacao_equipe_a, 
 (28, 28, 14, 1, 0, 3317, NULL),
 (29, 29, 21, 2, 0, 1869, NULL),
 (30, 30, 28, 2, 1, 1856, NULL);
- 
-ALTER SEQUENCE resultado_id_seq RESTART WITH 31;
