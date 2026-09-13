@@ -1,5 +1,9 @@
 DROP TABLE IF EXISTS fase;
-
+-- ============================================================
+-- 8ª TABELA: fase
+-- Descrição: Etapas de disputa do campeonato (ex.: Grupos, Quartas, Final).
+-- Dependências: campeonato.
+-- ============================================================
 CREATE TABLE fase (
     id SERIAL PRIMARY KEY,
     campeonato_id INT NOT NULL,
