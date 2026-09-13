@@ -1,5 +1,9 @@
 DROP TABLE IF EXISTS jogador;
- 
+ -- ============================================================
+-- 7ª TABELA: jogador
+-- Descrição: Atletas vinculados a equipes.
+-- Dependências: equipe.
+-- ============================================================
 CREATE TABLE jogador (
   id SERIAL PRIMARY KEY,
   equipe_id INT NOT NULL,
