@@ -1,4 +1,9 @@
 DROP TABLE IF EXISTS partida;
+-- ============================================================
+-- 10ª TABELA: partida
+-- Descrição: Confrontos agendados entre equipes, data, local e mediação.
+-- Dependências: equipe (mandante/visitante), campeonato, fase.
+-- ============================================================
 
 CREATE TABLE partida (
     id SERIAL PRIMARY KEY,
