@@ -1,3 +1,8 @@
+-- ============================================================
+-- 4ª INSERTS: equipe
+-- Descrição: Cadastro dos times participantes.
+-- Dependências de dados: Nenhuma.
+-- ============================================================
 INSERT INTO equipe (id, nome, quantidade_membros, ativo, vitorias, derrotas) VALUES
 (1, 'Alpha Wolves', 5, TRUE, 12, 4),
 (2, 'Beta Bears', 6, TRUE, 8, 15),
@@ -29,6 +34,3 @@ INSERT INTO equipe (id, nome, quantidade_membros, ativo, vitorias, derrotas) VAL
 (28, 'Solar Phoenix', 5, TRUE, 14, 10),
 (29, 'Lunar Titans', 6, TRUE, 20, 11),
 (30, 'Cosmic Comets', 7, TRUE, 11, 13);
-
--- Correção necessária para atualizar o contador do SERIAL após o insert manual
-ALTER SEQUENCE equipe_id_seq RESTART WITH 31;
