@@ -1,3 +1,8 @@
+-- ============================================================
+-- 3ª INSERTS: patrocinador
+-- Descrição: Cadastro de empresas parceiras.
+-- Dependências de dados: Nenhuma.
+-- ============================================================
 INSERT INTO patrocinador (id, nome, cnpj, categoria, valor_patrocinio, contato_email) VALUES
 (1, 'NeoByte Tecnologia', '01.001.001/0001-01', 'Master', 750000.00, 'contato@neobyte.com.br'),
 (2, 'QuantumChip Hardware', '02.002.002/0001-02', 'Master', 680000.00, 'contato@quantumchip.com.br'),
@@ -29,5 +34,3 @@ INSERT INTO patrocinador (id, nome, cnpj, categoria, valor_patrocinio, contato_e
 (28, 'VertexHost Hospedagem', '28.028.028/0001-28', 'Bronze', 35000.00, 'contato@vertexhost.com.br'),
 (29, 'OmegaCircuit Semicondutores', '29.029.029/0001-29', 'Master', 650000.00, 'contato@omegacircuit.com.br'),
 (30, 'PrimeStream Mídia', '30.030.030/0001-30', 'Ouro', 240000.00, 'contato@primestream.com.br');
-
-ALTER SEQUENCE patrocinador_id_seq RESTART WITH 31;
