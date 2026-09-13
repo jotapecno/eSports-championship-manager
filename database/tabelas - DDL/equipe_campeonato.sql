@@ -1,5 +1,10 @@
 DROP TABLE IF EXISTS equipe_campeonato;
 DROP TYPE IF EXISTS status_participacao_enum;
+-- ============================================================
+-- 9ª TABELA: equipe_campeonato
+-- Descrição: Tabela associativa (N:N) de inscrição de equipes em torneios.
+-- Dependências: equipe, campeonato.
+-- ============================================================
  
 -- ENUM para o status de participação, evitando erros de digitação
 CREATE TYPE status_participacao_enum AS ENUM ('Inscrita', 'Ativa', 'Eliminada', 'Desistente');
