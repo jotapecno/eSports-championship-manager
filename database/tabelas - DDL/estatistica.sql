@@ -1,5 +1,9 @@
 DROP TABLE IF EXISTS estatistica;
- 
+ -- ============================================================
+-- 12ª TABELA: estatistica
+-- Descrição: Métricas individuais (gols/pontos, cartões, faltas, assistências).
+-- Dependências: partida, equipe, jogador.
+-- ============================================================
 CREATE TABLE estatistica (
     id SERIAL PRIMARY KEY,
     partida_id INT NOT NULL,
