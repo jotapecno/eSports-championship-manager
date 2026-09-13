@@ -1,3 +1,8 @@
+-- ============================================================
+-- 5ª INSERTS: arbitro
+-- Descrição: Cadastro do quadro de árbitros.
+-- Dependências de dados: Nenhuma.
+-- ============================================================
 INSERT INTO arbitro (id, nome, cpf, email, nivel_experiencia, ativo) VALUES
 (1, 'Carlos Mendes', '50100000001', 'carlos.mendes@email.com', 'Júnior', TRUE),
 (2, 'Fernanda Lima', '50100000002', 'fernanda.lima@email.com', 'Pleno', TRUE),
@@ -29,5 +34,3 @@ INSERT INTO arbitro (id, nome, cpf, email, nivel_experiencia, ativo) VALUES
 (28, 'Débora Andrade', '50100000028', 'debora.andrade@email.com', 'Júnior', TRUE),
 (29, 'Vinicius Tavares', '50100000029', 'vinicius.tavares@email.com', 'Pleno', TRUE),
 (30, 'Karina Sampaio', '50100000030', 'karina.sampaio@email.com', 'Sênior', TRUE);
-
-ALTER SEQUENCE arbitro_id_seq RESTART WITH 31;
