@@ -4,10 +4,15 @@ Este arquivo será utilizado para documentar as entidades, atributos e relaciona
 
 ## Entidades iniciais
 
-- Jogador
-- Equipe
-- Campeonato
 - Modalidade
+- Organização
+- Patrocinador
+- Equipe
+- Árbitro
+- Campeonato
+- Jogador
+- Fase
+- Equipe_Campeonato
 - Partida
 - Resultado
 - Estatística
@@ -28,3 +33,5 @@ Este arquivo será utilizado para documentar as entidades, atributos e relaciona
 10. partida
 11. resultado
 12. estatistica
+
+> ⚠️ **Aviso:** É altamente recomendado criar as tabelas **uma de cada vez** (na ordem estrita acima) para garantir que todas as dependências de chaves estrangeiras existam previamente, evitando erros de execução no banco de dados.
