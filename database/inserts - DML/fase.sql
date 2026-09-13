@@ -1,3 +1,8 @@
+-- ============================================================
+-- 8ª INSERTS: fase
+-- Descrição: Cadastro das etapas estruturais do campeonato.
+-- Dependências de dados: IDs válidos de campeonato.
+-- ============================================================
 INSERT INTO fase (campeonato_id, nome_fase, formato_disputa, data_inicio, data_fim) VALUES
 (1, 'Fase de Grupos', 'MD1', '2026-10-01', '2026-10-15'),
 (1, 'Quartas de Final', 'MD3', '2026-10-18', '2026-10-20'),
@@ -29,5 +34,3 @@ INSERT INTO fase (campeonato_id, nome_fase, formato_disputa, data_inicio, data_f
 (10, 'Qualificatória 1', 'MD1', '2027-05-01', '2027-05-02'),
 (10, 'Qualificatória 2', 'MD1', '2027-05-08', '2027-05-09'),
 (10, 'Main Event', 'MD5', '2027-05-20', '2027-05-25');
-
-ALTER SEQUENCE fase_id_seq RESTART WITH 31;
