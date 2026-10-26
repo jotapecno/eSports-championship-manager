@@ -15,6 +15,7 @@ CREATE TABLE equipe_campeonato (
     equipe_id INT NOT NULL,
     data_inscricao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status_participacao status_participacao_enum DEFAULT 'Inscrita',
+    posicao_ranking INT,
  
     -- Restrição para evitar que a mesma equipe seja cadastrada duas vezes no mesmo campeonato
     CONSTRAINT uk_equipe_campeonato UNIQUE (campeonato_id, equipe_id),
