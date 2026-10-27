@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS fase;
 -- ============================================================
--- 8ª TABELA: fase
+-- 9ª TABELA: fase
 -- Descrição: Etapas de disputa do campeonato (ex.: Grupos, Quartas, Final).
 -- Dependências: campeonato.
 -- ============================================================
