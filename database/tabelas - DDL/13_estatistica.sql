@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS estatistica;
  -- ============================================================
--- 12ª TABELA: estatistica
+-- 13ª TABELA: estatistica
 -- Descrição: Métricas individuais (gols/pontos, cartões, faltas, assistências).
 -- Dependências: partida, equipe, jogador.
 -- ============================================================
