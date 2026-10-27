@@ -1,0 +1,19 @@
+
+CREATE OR REPLACE FUNCTION fc_pontuacao_acumulada_equipe(p_id_equipe INT, p_id_temporada INT)
+RETURNS INT AS $$
+DECLARE
+    v_total_pontos INT;
+BEGIN
+    SELECT COALESCE(SUM(dp.pontos), 0)
+    INTO v_total_pontos
+    FROM equipe e
+    JOIN partida_equipe dp ON e.id_equipe = dp.id_equipe
+    JOIN partida p ON dp.id_partida = p.id_partida
+    JOIN fase f ON p.id_fase = f.id_fase
+    JOIN campeonato c ON f.id_campeonato = c.id_campeonato
+    WHERE e.id_equipe = p_id_equipe
+      AND c.id_temporada = p_id_temporada;
+
+    RETURN v_total_pontos;
+END;
+$$ LANGUAGE plpgsql;
