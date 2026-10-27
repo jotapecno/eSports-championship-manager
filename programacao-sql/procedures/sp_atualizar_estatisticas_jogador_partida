@@ -1,0 +1,60 @@
+CREATE OR REPLACE PROCEDURE sp_atualizar_estatisticas_jogador_partida(
+    p_id_jogador INT,
+    p_id_partida INT,
+    p_eliminacoes INT,
+    p_mortes INT,
+    p_assistencias INT,
+    p_dano NUMERIC
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_id_campeonato INT;
+BEGIN
+    INSERT INTO jogador_partida (id_jogador, id_partida, eliminacoes, mortes, assistencias, dano)
+    VALUES (p_id_jogador, p_id_partida, p_eliminacoes, p_mortes, p_assistencias, p_dano)
+    ON CONFLICT (id_jogador, id_partida) 
+    DO UPDATE SET 
+        eliminacoes = EXCLUDED.eliminacoes,
+        mortes = EXCLUDED.mortes,
+        assistencias = EXCLUDED.assistencias,
+        dano = EXCLUDED.dano;
+
+    SELECT f.id_campeonato
+    INTO v_id_campeonato
+    FROM partida p
+    JOIN fase f ON p.id_fase = f.id_fase
+    WHERE p.id_partida = p_id_partida;
+
+    INSERT INTO estatisticas_jogador_campeonato (
+        id_jogador, 
+        id_campeonato, 
+        total_eliminacoes, 
+        total_mortes, 
+        total_assistencias, 
+        total_dano, 
+        partidas_jogadas
+    )
+    SELECT 
+        jp.id_jogador,
+        v_id_campeonato,
+        SUM(jp.eliminacoes),
+        SUM(jp.mortes),
+        SUM(jp.assistencias),
+        SUM(jp.dano),
+        COUNT(jp.id_partida)
+    FROM jogador_partida jp
+    JOIN partida pt ON jp.id_partida = pt.id_partida
+    JOIN fase fs ON pt.id_fase = fs.id_fase
+    WHERE jp.id_jogador = p_id_jogador 
+      AND fs.id_campeonato = v_id_campeonato
+    GROUP BY jp.id_jogador
+    ON CONFLICT (id_jogador, id_campeonato)
+    DO UPDATE SET 
+        total_eliminacoes = EXCLUDED.total_eliminacoes,
+        total_mortes = EXCLUDED.total_mortes,
+        total_assistencias = EXCLUDED.total_assistencias,
+        total_dano = EXCLUDED.total_dano,
+        partidas_jogadas = EXCLUDED.partidas_jogadas;
+END;
+$$;
