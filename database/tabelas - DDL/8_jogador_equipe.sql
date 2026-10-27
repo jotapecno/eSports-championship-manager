@@ -1,5 +1,11 @@
 DROP TABLE IF EXISTS jogador_equipe;
 
+-- ============================================================
+-- 8ª TABELA: jogador_equipe
+-- Descrição: Mostra a equipe atual do jogador e suas tranferências.
+-- Dependências: jogador e equipe.
+-- ============================================================
+
 CREATE TABLE jogador_equipe(
 jogador_id INT not null,
 equipe_id INT not null,
