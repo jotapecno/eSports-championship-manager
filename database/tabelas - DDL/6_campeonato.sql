@@ -12,6 +12,7 @@ CREATE TABLE campeonato (
     local VARCHAR(150),
     premiacao NUMERIC(12,2),
     status VARCHAR(30) NOT NULL,
+     max_equipes INT NOT NULL DEFAULT 8,
     modalidade_id INT NOT NULL,
     organizacao_id INT NOT NULL,
     CONSTRAINT fk_campeonato_modalidade
