@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS resultado;
  -- ============================================================
--- 11ª TABELA: resultado
+-- 12ª TABELA: resultado
 -- Descrição: Placar final, prorrogações e desfecho da partida.
 -- Dependências: partida, equipe.
 -- ============================================================
