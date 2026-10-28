@@ -15,4 +15,5 @@ CREATE TABLE jogador (
   funcao_preferida VARCHAR(100),
   numero_mpvs INT,
   posicao_ranking INT,
+  suspenso BOOLEAN DEFAULT FALSE
 );
