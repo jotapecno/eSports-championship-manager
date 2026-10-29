@@ -89,6 +89,9 @@ BEGIN
     INSERT INTO equipe_campeonato (campeonato_id, equipe_id)
     VALUES (p_campeonato_id, p_equipe_id);
 
+    INSERT INTO classificacao_campeonato (campeonato_id, equipe_id)
+    VALUES (p_campeonato_id, p_equipe_id);
+
     RAISE NOTICE 'Equipe % inscrita no campeonato %.', p_equipe_id, p_campeonato_id;
 END;
 $$;
