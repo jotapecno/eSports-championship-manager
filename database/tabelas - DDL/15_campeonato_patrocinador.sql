@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS campeonato_patrocinador;
 -- ============================================================
--- 12ª TABELA: campeonato_patrocinador
+-- 15ª TABELA: campeonato_patrocinador
 -- Descrição: Associação entre campeonatos e seus patrocinadores, cotas e valores.
 -- Dependências: campeonato, patrocinador.
 -- ============================================================
