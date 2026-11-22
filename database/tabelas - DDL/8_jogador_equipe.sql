@@ -18,5 +18,7 @@ ON DELETE CASCADE,
 CONSTRAINT fk_ej_equipe
 FOREIGN KEY(equipe_id) references equipe(id)
 ON DELETE RESTRICT
-
 );
+
+CREATE UNIQUE INDEX uq_jogador_vinculo_ativo
+    ON jogador_equipe (jogador_id) WHERE data_saida IS NULL;
