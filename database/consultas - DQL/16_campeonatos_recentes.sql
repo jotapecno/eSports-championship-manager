@@ -1,3 +1,9 @@
+-- ============================================================
+-- CONSULTA 16: Campeonatos recentes (últimos 6 meses)
+-- Descrição: Lista os torneios com data de início ou término nos últimos 6 meses, detalhando status, modalidade e organização.
+-- Dependências de dados: Tabelas campeonato, modalidade e organizacao.
+-- ============================================================
+
 SELECT
 c.id AS campeonato_id,
 c.nome AS nome_campeonato,
