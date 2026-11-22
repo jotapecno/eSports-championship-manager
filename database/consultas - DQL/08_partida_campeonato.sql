@@ -1,4 +1,9 @@
---questão: 8
+-- ============================================================
+-- CONSULTA 08: Total de partidas por campeonato
+-- Descrição: Contabiliza a quantidade total de partidas vinculadas a cada campeonato.
+-- Dependências de dados: Tabelas partida e campeonato.
+-- ============================================================
+
 select
 	c.nome as campeonato,
 	count(p.id) as total_de_partidas
