@@ -1,6 +1,8 @@
---retorna a porcentagem de vitorias da equipe. 
---parametros fc_taxa_vitoria_equipe(equipe, campeonato);
---Use: select fc_taxa_vitoria_equipe(4,3);
+-- ============================================================
+-- FUNCTION: fc_taxa_vitoria_equipe
+-- Descrição: Calcula o percentual de vitórias (win rate) de uma equipe em um campeonato, tratando divisões por zero.
+-- Dependências de dados: Tabela classificacao_campeonato.
+-- ============================================================
 
 CREATE OR REPLACE FUNCTION public.fc_taxa_vitoria_equipe(p_equipe_id integer, p_campeonato_id integer)
  RETURNS numeric
