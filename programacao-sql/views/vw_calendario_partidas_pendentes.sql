@@ -1,3 +1,9 @@
+-- ============================================================
+-- VIEW: vw_calendario_partidas_pendentes
+-- Descrição: Lista as partidas agendadas que ainda não possuem resultado registrado, detalhando data, horário, modalidade, confronto, fase e local.
+-- Dependências de dados: Tabelas partida, campeonato, modalidade, equipe, fase e resultado.
+-- ============================================================
+
 CREATE OR REPLACE VIEW vw_calendario_partidas_pendentes AS
 SELECT
     p.id AS partida_id,
