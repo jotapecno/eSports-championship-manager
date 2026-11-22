@@ -1,6 +1,9 @@
 -- ============================================================
--- 3. Equipes inscritas que ainda não disputaram nenhuma partida
+-- CONSULTA 03: Equipes inscritas que ainda não disputaram nenhuma partida
+-- Descrição: Lista as equipes inscritas em campeonatos que ainda não possuem partidas agendadas ou jogadas na competição.
+-- Dependências de dados: Tabelas equipe_campeonato, equipe, campeonato e partida.
 -- ============================================================
+
 SELECT e.nome AS equipe,
        c.nome AS campeonato
 FROM equipe_campeonato ec
