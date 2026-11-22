@@ -1,9 +1,8 @@
--- Function: fc_calcular_kda_jogador
--- Retorna o KDA acumulado do jogador: (Kills + Assists) / Deaths.
--- Filtros opcionais por campeonato e/ou modalidade.
--- Uso: SELECT fc_calcular_kda_jogador(1);                        -- geral
---      SELECT fc_calcular_kda_jogador(1, 2);                     -- campeonato 2
---      SELECT fc_calcular_kda_jogador(1, p_modalidade_id => 3);  -- modalidade 3
+-- ============================================================
+-- FUNCTION: fc_calcular_kda_jogador
+-- Descrição: Calcula a taxa de KDA ((abates + assistências) / mortes) de um jogador, com filtros opcionais por campeonato e modalidade.
+-- Dependências de dados: Tabelas jogador, estatistica, partida e campeonato.
+-- ============================================================
 
 CREATE OR REPLACE FUNCTION fc_calcular_kda_jogador(
     p_jogador_id    INT,
