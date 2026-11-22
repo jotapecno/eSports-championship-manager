@@ -1,3 +1,9 @@
+-- ============================================================
+-- FUNCTION: fc_verificar_elegibilidade_jogador
+-- Descrição: Valida se um atleta está apto a competir, verificando se possui 18 anos ou mais, vínculo ativo em uma equipe e ausência de suspensão.
+-- Dependências de dados: Tabelas jogador e jogador_equipe.
+-- ============================================================
+
 CREATE OR REPLACE FUNCTION fc_verificar_elegibilidade_jogador(p_jogador_id INT)
 RETURNS BOOLEAN
 LANGUAGE plpgsql
