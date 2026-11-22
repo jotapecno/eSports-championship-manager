@@ -1,3 +1,9 @@
+-- ============================================================
+-- 8ª INSERTS: jogador_equipe
+-- Descrição: Vínculo e histórico de passagem dos jogadores pelas equipes.
+-- Dependências de dados: IDs válidos de jogador e equipe.
+-- ============================================================
+
 INSERT INTO jogador_equipe (jogador_id, equipe_id, data_entrada, data_saida) VALUES
 (1, 1, '2023-02-10', NULL),
 (2, 1, '2023-05-18', NULL),
