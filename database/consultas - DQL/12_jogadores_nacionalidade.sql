@@ -1,3 +1,9 @@
+-- ============================================================
+-- CONSULTA 12: Quantidade de jogadores por equipe e nacionalidade
+-- Descrição: Agrupa e contabiliza a distribuição de atletas por país dentro de cada equipe.
+-- Dependências de dados: Tabelas equipe, jogador_equipe e jogador.
+-- ============================================================
+
 SELECT 
     e.nome AS nome_equipe, 
     j.pais AS nacionalidade, 
