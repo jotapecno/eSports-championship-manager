@@ -12,7 +12,6 @@ CREATE TABLE partida (
     equipe1_id INT NOT NULL,
     equipe2_id INT NOT NULL,
     data_hora TIMESTAMP NOT NULL,
-    duracao INTERVAL NOT NULL,
     local_partida VARCHAR(255) DEFAULT 'Online',
 
     CONSTRAINT fk_partida_campeonato
@@ -37,4 +36,9 @@ CREATE TABLE partida (
 
     CONSTRAINT chk_partida_equipes_diferentes
         CHECK (equipe1_id <> equipe2_id)
+
+    CONSTRAINT fk_partida_arbitro
+        FOREIGN KEY (arbitro_id)
+        REFERENCES arbitro(id)
+        ON DELETE SET NULL
 );
