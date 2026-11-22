@@ -1,32 +1,25 @@
-WITH modalidades AS (
-    SELECT 1 AS id, 'Counter-Strike 2' AS nome UNION ALL
-    SELECT 2, 'Valorant'
-),
-equipes AS (
-    SELECT 10 AS id, 'Alpha Esports' AS nome UNION ALL
-    SELECT 20, 'Beta Gaming' UNION ALL
-    SELECT 30, 'Gamma Team'
-),
-jogadores AS (
-    SELECT 100 AS id, 'Jogador S1mple' AS nome, 10 AS equipe_id UNION ALL
-    SELECT 200, 'Jogador TenZ', 20 UNION ALL
-    SELECT 300, 'Jogador Niko', 30
-),
-campeonatos AS (
-    SELECT 1 AS id, 'Major Championship 2026' AS nome, 1 AS modalidade_id, 10 AS equipe_vencedora_id, 100 AS mvp_id UNION ALL
-    SELECT 2, 'Masters Invitational', 2, 20, 200
-)
-SELECT 
-    c.nome AS campeonato,
-    m.nome AS modalidade,
-    e.nome AS equipe_vencedora,
-    j.nome AS mvp
-FROM 
-    campeonatos c
-INNER JOIN 
-    modalidades m ON c.modalidade_id = m.id
-INNER JOIN <code>equipes</code> e ON c.equipe_vencedora_id = e.id
-INNER JOIN 
-    jogadores j ON c.mvp_id = j.id
-ORDER BY 
-    c.nome;
+-- ============================================================
+-- CONSULTA 20: Campeão e MVP de cada campeonato finalizado
+-- Descrição: Exibe a equipe campeã (1º lugar) e o jogador com maior 'MVP Score' em cada torneio finalizado.
+-- Dependências de dados: Tabelas campeonato, modalidade, equipe_campeonato, equipe, estatistica, partida e jogador.
+-- ============================================================
+
+SELECT c.nome AS campeonato,
+       m.nome AS modalidade,
+       eq.nome AS equipe_campea,
+       mvp.jogador AS mvp
+FROM campeonato c
+JOIN modalidade m ON m.id = c.modalidade_id
+LEFT JOIN equipe_campeonato ec ON ec.campeonato_id = c.id AND ec.posicao_ranking = 1
+LEFT JOIN equipe eq ON eq.id = ec.equipe_id
+LEFT JOIN LATERAL (
+    SELECT j.nome AS jogador
+    FROM estatistica s
+    JOIN partida p ON p.id = s.partida_id
+    JOIN jogador j ON j.id = s.jogador_id
+    WHERE p.campeonato_id = c.id AND s.nome_metrica = 'MVP Score'
+    ORDER BY s.valor DESC
+    LIMIT 1
+) mvp ON TRUE
+WHERE c.status = 'Finalizado'
+ORDER BY c.nome;
