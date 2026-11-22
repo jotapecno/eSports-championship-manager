@@ -1,5 +1,5 @@
 -- ============================================================
--- 11ª INSERTS: resultado
+-- 12ª INSERTS: resultado
 -- Descrição: Fechamento de súmula com o placar de jogos concluídos.
 -- Dependências de dados: IDs válidos de partida e equipe.
 -- ============================================================
