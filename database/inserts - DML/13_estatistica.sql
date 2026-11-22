@@ -1,5 +1,5 @@
 -- ============================================================
--- 12ª INSERTS: estatistica
+-- 13ª INSERTS: estatistica
 -- Descrição: Métricas e lances individuais dos atletas por jogo.
 -- Dependências de dados: IDs válidos de partida, equipe e jogador.
 -- ============================================================
@@ -34,4 +34,3 @@ INSERT INTO estatistica (id, partida_id, equipe_id, jogador_id, nome_metrica, va
 (28, 14, 1, 5, 'MVP Score', 65.40),
 (29, 15, 3, 16, 'Assistencias', 10.00),
 (30, 15, 4, 22, 'Assistencias', 12.00);
-
