@@ -1,6 +1,8 @@
---criar a função e em seguida criar a trigger 
-  --passo 1º
--- DROP FUNCTION public.fn_atualizar_classificacao_pos_partida();
+-- ============================================================
+-- TRIGGER: tg_atualizar_classificacao_pos_partida
+-- Descrição: Acionado após a inserção de um resultado, atualiza automaticamente os pontos (+3 vitória, +1 empate), vitórias e derrotas das equipes na tabela de classificação.
+-- Dependências de dados: Tabelas resultado, partida e classificacao_campeonato (executa fn_atualizar_classificacao_pos_partida).
+-- ============================================================
 
 CREATE OR REPLACE FUNCTION public.fn_atualizar_classificacao_pos_partida()
 	RETURNS trigger
@@ -67,8 +69,6 @@ DECLARE
 $function$
 ;
 
--- passo 2º
---criação da trigger executar no script 
 DROP TRIGGER IF EXISTS tg_atualizar_classificacao_pos_partida ON resultado;
 
 CREATE TRIGGER tg_atualizar_classificacao_pos_partida
