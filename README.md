@@ -31,7 +31,6 @@ O sistema contempla:
 - Premiação e histórico de auditoria dos campeões
 - Consultas e relatórios
 
-> O escopo poderá ser atualizado e expandido durante o desenvolvimento do projeto.
 
 ---
 
