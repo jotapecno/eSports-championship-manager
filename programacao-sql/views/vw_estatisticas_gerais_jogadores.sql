@@ -1,3 +1,9 @@
+-- ============================================================
+-- VIEW: vw_estatisticas_gerais_jogadores
+-- Descrição: Consolida o desempenho individual dos atletas por modalidade, calculando médias de abates, mortes, assistências e a taxa de KDA.
+-- Dependências de dados: Tabelas jogador, estatistica, partida, campeonato e modalidade.
+-- ============================================================
+
 CREATE OR REPLACE VIEW vw_estatisticas_gerais_jogadores AS
 SELECT 
     j.id AS jogador_id,
