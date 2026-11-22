@@ -1,4 +1,9 @@
---questão: 5
+-- ============================================================
+-- CONSULTA 05: Premiação total por modalidade
+-- Descrição: Soma o valor total de premiação distribuída em campeonatos agrupados por modalidade.
+-- Dependências de dados: Tabelas modalidade e campeonato.
+-- ============================================================
+
 select 
 	sum(c.premiacao) as premiação,
 	m.nome as modalidade
