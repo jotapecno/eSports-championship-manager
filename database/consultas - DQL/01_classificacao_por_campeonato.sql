@@ -1,7 +1,9 @@
 -- ============================================================
--- 1. Classificação por campeonato
--- Equipes e número de vitórias em cada campeonato.
+-- CONSULTA 01: Classificação por campeonato
+-- Descrição: Exibe o total de vitórias de cada equipe inscrita por campeonato, mantendo equipes sem vitórias registradas.
+-- Dependências de dados: Tabelas equipe_campeonato, campeonato, equipe, partida e resultado.
 -- ============================================================
+
 SELECT c.nome AS campeonato,
        e.nome AS equipe,
        COUNT(r.id) AS vitorias                        -- conta só os resultados em que a equipe venceu
