@@ -1,6 +1,8 @@
--- Procedure: sp_inscrever_equipe_campeonato
--- Inscreve uma equipe em um campeonato, validando o número de jogadores e as vagas.
--- Uso: CALL sp_inscrever_equipe_campeonato(1, 3);
+-- ============================================================
+-- PROCEDURE: sp_inscrever_equipe_campeonato
+-- Descrição: Inscreve uma equipe em um campeonato após validar vagas disponíveis, status do torneio, atividade da equipe e limites mínimo/máximo de jogadores no elenco.
+-- Dependências de dados: Tabelas campeonato, modalidade, equipe, jogador_equipe, equipe_campeonato e classificacao_campeonato.
+-- ============================================================
 
 CREATE OR REPLACE PROCEDURE sp_inscrever_equipe_campeonato(
     p_campeonato_id INT,
@@ -18,7 +20,6 @@ DECLARE
     v_qtd_inscritas  INT;
     v_reservas       CONSTANT INT := 2;
 BEGIN
-    -- FOR UPDATE evita que inscrições simultâneas estourem o limite de vagas
     SELECT c.max_equipes, c.status, m.numero_jogadores
       INTO v_max_equipes, v_status, v_min_jogadores
       FROM campeonato c
@@ -27,59 +28,51 @@ BEGIN
        FOR UPDATE OF c;
 
     IF NOT FOUND THEN
-        RAISE EXCEPTION 'Campeonato % não encontrado.', p_campeonato_id;
+        RAISE EXCEPTION 'Campeonato % nao encontrado.', p_campeonato_id;
     END IF;
 
-    IF LOWER(v_status) IN ('encerrado', 'cancelado') THEN
-        RAISE EXCEPTION 'Campeonato % não aceita inscrições (status: %).',
+    IF LOWER(v_status) IN ('finalizado', 'cancelado') THEN
+        RAISE EXCEPTION 'Campeonato % nao aceita inscricoes (status: %).',
             p_campeonato_id, v_status;
     END IF;
 
     IF v_min_jogadores IS NULL THEN
-        RAISE EXCEPTION 'A modalidade do campeonato % não define numero_jogadores.',
+        RAISE EXCEPTION 'A modalidade do campeonato % nao define numero_jogadores.',
             p_campeonato_id;
     END IF;
 
     SELECT ativo INTO v_equipe_ativa FROM equipe WHERE id = p_equipe_id;
-
     IF NOT FOUND THEN
-        RAISE EXCEPTION 'Equipe % não encontrada.', p_equipe_id;
+        RAISE EXCEPTION 'Equipe % nao encontrada.', p_equipe_id;
     END IF;
-
     IF NOT v_equipe_ativa THEN
-        RAISE EXCEPTION 'Equipe % está inativa.', p_equipe_id;
+        RAISE EXCEPTION 'Equipe % esta inativa.', p_equipe_id;
     END IF;
 
     IF EXISTS (SELECT 1 FROM equipe_campeonato
-                WHERE campeonato_id = p_campeonato_id
-                  AND equipe_id = p_equipe_id) THEN
-        RAISE EXCEPTION 'Equipe % já está inscrita no campeonato %.',
+                WHERE campeonato_id = p_campeonato_id AND equipe_id = p_equipe_id) THEN
+        RAISE EXCEPTION 'Equipe % ja esta inscrita no campeonato %.',
             p_equipe_id, p_campeonato_id;
     END IF;
 
-    -- Jogadores com vínculo ativo (sem data de saída)
     v_max_jogadores := v_min_jogadores + v_reservas;
 
     SELECT COUNT(*) INTO v_qtd_jogadores
       FROM jogador_equipe
-     WHERE equipe_id = p_equipe_id
-       AND data_saida IS NULL;
+     WHERE equipe_id = p_equipe_id AND data_saida IS NULL;
 
     IF v_qtd_jogadores < v_min_jogadores THEN
-        RAISE EXCEPTION 'Equipe % tem % jogador(es); mínimo exigido: %.',
+        RAISE EXCEPTION 'Equipe % tem % jogador(es); minimo exigido: %.',
             p_equipe_id, v_qtd_jogadores, v_min_jogadores;
     END IF;
-
     IF v_qtd_jogadores > v_max_jogadores THEN
-        RAISE EXCEPTION 'Equipe % tem % jogadores; máximo permitido: %.',
+        RAISE EXCEPTION 'Equipe % tem % jogadores; maximo permitido: %.',
             p_equipe_id, v_qtd_jogadores, v_max_jogadores;
     END IF;
 
-    -- Equipes desistentes não ocupam vaga
     SELECT COUNT(*) INTO v_qtd_inscritas
       FROM equipe_campeonato
-     WHERE campeonato_id = p_campeonato_id
-       AND status_participacao <> 'Desistente';
+     WHERE campeonato_id = p_campeonato_id AND status_participacao <> 'Desistente';
 
     IF v_qtd_inscritas >= v_max_equipes THEN
         RAISE EXCEPTION 'Campeonato % sem vagas (% de % ocupadas).',
