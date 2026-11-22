@@ -1,3 +1,9 @@
+-- ============================================================
+-- CONSULTA 13: Partidas empatadas
+-- Descrição: Busca partidas encerradas em que a pontuação da equipe A foi igual à da equipe B.
+-- Dependências de dados: Tabelas partida e resultado.
+-- ============================================================
+
 SELECT 
     p.id AS partida_id, 
     p.data_hora, 
