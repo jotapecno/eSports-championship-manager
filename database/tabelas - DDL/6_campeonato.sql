@@ -23,4 +23,7 @@ CREATE TABLE campeonato (
         FOREIGN KEY (organizacao_id)
         REFERENCES organizacao(id)
         ON DELETE RESTRICT
+    CONSTRAINT chk_campeonato_status
+    CHECK (status IN ('Planejado', 'Em andamento', 'Finalizado', 'Cancelado')),
+
 );
