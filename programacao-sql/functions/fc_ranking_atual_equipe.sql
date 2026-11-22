@@ -1,3 +1,9 @@
+-- ============================================================
+-- FUNCTION: fc_ranking_atual_equipe
+-- Descrição: Retorna a posição final de uma equipe específica dentro de um campeonato determinado.
+-- Dependências de dados: Tabela equipe_campeonato.
+-- ============================================================
+
 DROP FUNCTION public.fc_ranking_atual_equipe(int4, int4);
 
 CREATE OR REPLACE FUNCTION public.fc_ranking_atual_equipe(
