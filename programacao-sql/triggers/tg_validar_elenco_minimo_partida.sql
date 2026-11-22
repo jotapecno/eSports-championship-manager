@@ -1,3 +1,9 @@
+-- ============================================================
+-- TRIGGER: tg_validar_elenco_minimo_partida
+-- Descrição: Valida antes do cadastro ou edição de uma partida se ambas as equipes possuem a quantidade mínima de jogadores ativos e não suspensos exigida pela modalidade.
+-- Dependências de dados: Tabelas partida, campeonato, modalidade, jogador_equipe e jogador (executa fn_validar_elenco_minimo_partida).
+-- ============================================================
+
 CREATE OR REPLACE FUNCTION fn_validar_elenco_minimo_partida()
 RETURNS TRIGGER
 LANGUAGE plpgsql
@@ -47,8 +53,7 @@ END;
 $$;
 
 DROP TRIGGER IF EXISTS tg_validar_elenco_minimo_partida ON partida;
-
 CREATE TRIGGER tg_validar_elenco_minimo_partida
-BEFORE INSERT OR UPDATE ON partida
+BEFORE INSERT OR UPDATE OF equipe1_id, equipe2_id, campeonato_id ON partida
 FOR EACH ROW
 EXECUTE FUNCTION fn_validar_elenco_minimo_partida();
